@@ -1,30 +1,26 @@
 #include<iostream>
 #include<stack>
+
 using namespace std;
 int main(){
-	stack<char>stack;
 	int total_number;
 	char pt;
 	cin>>total_number;
 	getchar();
-	
 	for(int i=0;i<total_number;i++)
-	{
+	{	stack<char>stack;
 		while(1)
 		{
 			pt=getchar();
-			
-			
 			if(pt=='(')
 			{
 				stack.push(pt);
 			}
-			else if(pt==')')
-			{
+			else if(pt==')'){
 				if(stack.empty()==true)
 				{
 					cout<<"NO"<<'\n';
-					while((pt!='\n'))
+					while(pt!='\n')
 					{
 						pt=getchar();
 					}
@@ -32,13 +28,12 @@ int main(){
 				}
 				stack.pop();
 			}
-			
 			else if(pt=='\n')
 			{
 				if(stack.empty()==true)
 				{
 					cout<<"YES"<<'\n';
-				}
+				}	
 				else
 				{
 					cout<<"NO"<<'\n';
@@ -47,10 +42,8 @@ int main(){
 						stack.pop();
 					}
 				}
-				break;
+				
 			}
-
 		}
-		
 	}
 }
